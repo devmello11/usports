@@ -1,0 +1,332 @@
+/* MENU ABERTO */
+
+/* TELAS MAIORES */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 95dvw;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 50px;
+    color: var(--white);
+    text-transform: uppercase;
+    z-index: 999;
+}
+
+.logo{
+    height: 60px;
+    padding-left: 20px;
+}
+
+.menu-container{
+    & {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+        font-size: 32px;
+    }
+    & a {
+        display: flex;
+        align-items: center;
+        color: var(--white);
+        text-decoration: none;
+        margin: 0px 20px;
+    }
+    & #arrow-down-icon {
+        width: 3.7rem;
+        height: 3.7rem;
+        fill: var(--orange);
+    }
+}
+
+.search-and-partners {
+    & {
+        display: flex;
+        height: 2ch;
+        align-items: center;
+    }
+    /* BOTAO DE PESQUISA COMENTADO
+    & .search{
+        display: flex;
+        color: var(--orange);
+        font-size: 65px;
+        margin-right: 50px;
+        cursor: pointer;
+    }
+    & .search:hover{
+        color: var(--orange-hover);
+    }
+    .search-input{
+        position: absolute;
+        right: 27%;
+        padding: 10px 30px;
+        background-color: var(--white);
+        outline: none;
+        border: none;
+        border-radius: 100px;
+        font-size: 16px;
+        color: var(--dark-grey);
+        overflow: hidden;
+        animation: showSearch 2s ease forwards;
+    }
+    & .close{
+        display: flex;
+        color: var(--orange);
+        font-size: 70px;
+        margin-right: 45px;
+        cursor: pointer;
+    }
+    & .close:hover{
+        color: var(--orange-hover);
+    }
+        */
+}
+
+.partners-container{
+    & {
+        position: relative;
+    }
+    & .partners-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 200px;
+        background-color: var(--orange);
+        padding: 15px 33px;
+        font-size: 24px;
+        color: var(--dark-grey);
+        cursor: pointer;
+        transition: background-color 0.2 ease;
+    }
+
+    & .partners-btn:hover{
+        background-color: var(--orange-hover);
+    }
+    & #partnersArrow{
+        width: 3.8rem;
+        height: 3.8rem;
+        fill: var(--dark-grey);
+    }
+    & .partners-list{
+        position: fixed;
+        top: 114px;
+        margin-left: 10px;
+        width: 180px;
+        padding: 60px 33px;
+        background-color: var(--white);
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size:20px;
+        line-height: 3ch;
+        color: var(--dark-grey);
+    }
+    & .partners-item{
+        color: var(--dark-grey);
+        text-decoration: none;
+        border-bottom: 1px solid rgb(201, 201, 201);
+        width: 80px;
+        text-align: center;
+        padding: 10px 15px 5px 15px;
+        cursor: pointer;
+    }
+    & .partners-lastitem{
+        color: var(--dark-grey);
+        text-decoration: none;
+        width: 80px;
+        text-align: center;
+        padding: 10px 15px 5px 15px;
+        cursor: pointer;
+    }
+    & .partners-item:hover, .partners-lastitem:hover {
+        color: var(--black);
+        font-weight: bold;
+    }
+}
+
+@keyframes showSearch {
+    0% {
+        width: 0;
+        height: 4ch;
+    }
+    100% {
+        width: 900px;
+        height: 4ch;
+    }
+}
+
+/* TELAS ATE 1280px */
+@media screen and (min-width: 1150px) and (max-width: 1500px){
+
+    .logo{
+    height: 45px;
+    padding-left: 10px;
+    }
+
+    .menu-container{
+        & {
+            font-size: 24px;
+        }
+        & a {
+            margin: 0px 10px;
+        }
+        & #arrow-down-icon {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    
+    .search-and-partners {
+        & {
+            display: flex;
+        }
+        /* BOTÃO DE PESQUISA COMENTADO
+        & .search{
+            font-size: 50px;
+            margin-right: 30px;
+        }
+        .search-input{
+            right: 27%;
+            padding: 10px 30px;
+        }
+        & .close{
+            font-size: 50px;
+            margin-right: 30px;
+        }
+        */ 
+    }
+
+    .partners-container{
+        & .partners-btn{
+            height: 40px;
+            width: fit-content;
+            padding: 10px 25px;
+            font-size: 20px;
+        }
+        & #partnersArrow{
+            width: 3.2rem;
+            height: 3.2rem;
+        }
+        & .partners-list{
+            top: 104px;
+            width: 130px;
+            padding: 50px 33px;
+        }
+    }
+
+    @keyframes showSearch {
+        0% {
+            width: 0;
+            height: 3ch;
+        }
+        100% {
+            width: 600px;
+            height: 3ch;
+        }
+    }
+}
+
+@media screen and (min-width: 996px) and (max-width: 1150px){
+    header {
+        margin-top: 70px;
+        padding: 30px;
+    }
+    .logo{
+        height: 45px;
+        padding-left: 0px;
+    }
+
+    .menu-container{
+        & {
+            margin-left: 20px;
+            font-size: 24px;
+        }
+        & a {
+            margin: 0px 10px;
+        }
+        & #arrow-down-icon {
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+    }
+    .search-and-partners {
+        & {
+            display: flex;
+        }
+        /* BOTÃO DE PESQUISA COMENTADO
+        & .search{
+            display: none;
+        }
+        .search-input{
+            display: none;
+        }
+        & .close{
+            display: none;
+        }
+        */
+    }
+    .partners-container{
+        & .partners-btn{
+            width: fit-content;
+            padding: 5px 0px 5px 10px;
+            font-size: 19px;
+        }
+        & #partnersArrow{
+            width: 2.8rem;
+            height: 2.8rem;
+        }
+        & .partners-list{
+            top: 104px;
+            width: 130px;
+            padding: 50px 33px;
+        }
+    }
+}
+
+/* TELAS CELULARES */
+@media screen and (max-width: 996px) {
+    header {
+        width: 100dvw;
+        height: 10dvh;
+        flex-direction: column;
+        padding: 0px;
+        color: var(--white);
+        background-color: var(--dark-grey);
+        margin-top: 0;
+        padding-top: 15px;
+    }
+    .logo{
+        height: 1.9rem;
+        padding-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .menu-container{
+        & {
+            justify-content: center;
+            background-color: var(--orange)!important;
+            height: 2.6ch;
+            font-size: 12.5px;
+            width: 100vw;
+            padding: 3px 0px;
+        }
+        & a {
+            margin: 0px 8px;
+        }
+        & #arrow-down-icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            fill: var(--dark-grey);
+        }
+    }
+    .search-and-partners{
+        display: none;
+    }
+}

@@ -1,0 +1,75 @@
+.fabricacao-section {
+  /* Compensa o header fixo para centralizar visualmente */
+  padding: 32px 16px;
+  padding-top: 140px;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.fabricacao-header {
+  max-width: 960px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.fabricacao-header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.fabricacao-header p {
+  margin: 0;
+  color: #555;
+}
+
+.fabricacao-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  /* Centraliza o grid e seus itens nos dois eixos */
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.fabricacao-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.fabricacao-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.fabricacao-caption {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+@media (max-width: 900px) {
+  .fabricacao-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .fabricacao-grid {
+    grid-template-columns: 1fr;
+  }
+}

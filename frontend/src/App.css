@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+  position: relative;
+  background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%) !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* importante */
+  height: 100vh;
+  width: 100%;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+    display: flex;
+}
+
+:root {
+  --orange: #ef7f2b;
+  --orange-hover: #ce6d22;
+  --white: #F7F6F5;
+  --light-grey: #333;
+  --grey: #222;
+  --dark-grey: #1D1D1B;
+  --black: #000;
+}

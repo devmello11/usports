@@ -1,0 +1,289 @@
+/* src/styles/home2.css */
+.home-container-base {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /*overflow: hidden;*/
+}
+
+.slider {
+  display: flex;
+  width: 200vw;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100vw;
+  flex-shrink: 0;
+  position: relative;
+}
+
+#right-arrow-2 {
+  position:absolute;
+  font-size:60px;
+  margin-right: 1%;
+  top: 52.5%;
+  right:0;
+  cursor:pointer;
+  z-index:10;
+}
+
+#right-arrow-2:hover { transform:scale(1.1); }
+
+.home2-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home2-container main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 95%;
+  position: relative;
+  overflow: hidden;
+}
+
+.home2-container *,
+.home2-container *::before,
+.home2-container *::after {
+  box-sizing: border-box;
+}
+
+.container-imagens {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.homem {
+  position: absolute;
+  top: 5%;
+  left: -11%;
+  z-index: 2;
+}
+.homem img {
+  width: 70vw;
+  height: auto;
+}
+
+.mulher {
+  position: relative;
+  right: 16%;
+  top: -20vw;
+  z-index: 2;
+}
+.mulher img {
+  width: 135vw;
+  height: auto;
+}
+
+.homem-mulher {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.homem-mulher img {
+  width: 100vw;
+  height: auto;
+}
+
+.caixa-texto {
+  position: absolute;
+  right: 6vw;
+  bottom: 6.5vw;
+  text-align: left;
+  z-index: 3;
+}
+.titulo {
+  display: inline-block;
+  background-color: var(--orange);
+  padding: 2px 5px;
+  margin-bottom: 0.6rem;
+  font-size: 2.5vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+.subtitulo {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.3;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+/* intermediários */
+@media (max-width:1280px){ 
+  .caixa-texto {
+    position: absolute;
+    right: 1%;
+    bottom: 14%;
+  }
+
+  .titulo{
+    font-size: 2.1vw;
+  }
+
+  .subtitulo{
+    width: 290px;
+    font-size: 1.1rem;
+  }
+
+  .homem {
+    position: absolute;
+    top: 8%;
+    left: -13%;
+    z-index: 2;
+  }
+  .homem img {
+    width: 80vw;
+    height: auto;
+  }
+
+  .mulher {
+    position: relative;
+    right: 8%;
+    top: -16vw;
+    z-index: 2;
+  }
+  .mulher img {
+    width: 140vw;
+    height: auto;
+  }
+
+}
+
+/* mobile slide 1 */
+@media (max-width: 480px) {
+  .homem img { width:0; }
+  .mulher img{ width:0; }
+  .homem-mulher {
+    display: flex;
+    top:14%;
+    left:10vw;
+  }
+  .homem-mulher img {
+    width:210vw; 
+    object-fit:cover;
+
+  }
+
+  .caixa-texto {
+    position: absolute;
+    right:33%;
+    top:22%;
+    text-align:left;
+  }
+  .titulo {
+    padding:2px 3px;
+    font-size:6vw;
+  }
+  .subtitulo {
+    font-size:3.9vw;
+    width:60vw;
+  }
+
+
+  .clientes-mobile {
+      position:absolute;
+      bottom:18vw;
+      left:50%;
+      transform:translateX(-50%);
+      width:100%;
+      text-align:center;
+  }
+
+  .btn-clientes-mobile {
+    background: var(--grey);
+    color: var(--white);
+    border: none;              
+    outline: none;             
+    border-radius: 0 20px 0 20px;
+    padding: 4px 12px;
+    font-size: 3.0vw;
+    font-weight: 800;
+    box-shadow: none;  
+            
+  }
+
+
+  .logos-clientes {
+    display: none;
+  }
+  .logo-lff   { 
+    display: none;
+  }
+  
+  #right-arrow-2 {
+        position:absolute;
+        font-size:60px;
+        top: 52.5%;
+        right:0;
+        cursor:pointer;
+        z-index:10;
+    }
+    #right-arrow-2:hover { transform:scale(1.1); }
+
+}
+
+@media (max-width: 390px) {
+
+  .clientes-mobile {
+      position:absolute;
+      bottom:37vw;
+      left:50%;
+      transform:translateX(-50%);
+      width:100%;
+      text-align:center;
+  }
+
+  .homem-mulher {
+    display: flex;
+    top:9%;
+    left:11vw;
+  }
+  .homem-mulher img {
+    width:210vw; 
+    object-fit:cover;
+
+  }
+
+  .caixa-texto {
+    position: absolute;
+    right:33%;
+    top:19%;
+    text-align:left;
+  }
+  .titulo {
+    padding:2px 3px;
+    font-size:6vw;
+  }
+  .subtitulo {
+    font-size:3.9vw;
+    width:60vw;
+  }
+
+}

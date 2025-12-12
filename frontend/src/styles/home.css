@@ -1,0 +1,276 @@
+
+.body-container{
+    & {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 98vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    & .tshirt img{
+        position: relative; 
+        top: -120px;
+        left: -20px;
+        height: 57vw;
+        animation: float 2.2s ease-in-out infinite;
+    }
+}
+
+.title{
+    & {
+        font-size: 45px;
+    }
+    & .title-top{
+        width: fit-content;
+        background-color: var(--orange) !important;
+        margin-bottom: 15px;
+        padding: 2px 5px;
+    }
+    & .title-bottom{
+        width: fit-content;
+        background-color: var(--orange) !important;
+    }
+}
+
+.phrase-container {
+    margin-top: 35px;
+    width: fit-content;
+    font-size: 36px;
+}
+
+.btn-price {
+    & {
+        text-decoration: none;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        margin-top: 140px;
+        font-size: 28px;
+        background-color: var(--orange) !important;
+        padding: 5px 25px;
+        font-weight: 900;
+        transition: background-color .1s ease;
+    }
+    &:hover{
+        background-color: var(--orange-hover) !important;
+    }
+}
+
+#left-arrow {
+    position:absolute;
+    top: 50%;
+    font-size:60px;
+    transform:rotate(180deg);
+    cursor:pointer;
+    z-index:10;
+    transition: scale 0.5s ease;
+    }
+    #left-arrow:hover { scale: 1.1; }
+
+    #right-arrow {
+    position:absolute;
+    top: 50%;
+    margin-right: 1%;
+    font-size:60px;
+    right:0;
+    cursor:pointer;
+    z-index:10;
+    }
+    #right-arrow:hover { transform:scale(1.1); }
+
+    @media screen and (max-width: 1280px){
+        .body-container{
+            & .tshirt img{
+                top: -120px;
+                left: -0px;
+                height: 62vw;
+            }
+        }
+
+        .title{
+            & {
+                font-size: 30px;
+            }
+            & .title-top{
+                margin-bottom: 12px;
+                padding: 2px 6px;
+            }
+        }
+
+        .phrase-container {
+            margin-top: 30px;
+            font-size: 28px;
+        }
+
+        .btn-price {
+            margin-top: 100px;
+            font-size: 20px;
+        }
+    }
+
+    @keyframes float {
+        0% {
+        transform: translateY(0px);
+        }
+        50% {
+        transform: translateY(-10px);
+        }
+        100% {
+        transform: translateY(0px);
+        }
+    }
+
+    /* MOBILE (≤480px) – slide 2 */
+    @media (max-width:480px){
+    .home1-container .body-container {
+        flex-direction:column;
+        align-items:center;
+        padding-top:5vw;
+        height:auto;
+    }
+    .home1-container .tshirt img {
+        position:relative;
+        top:-55px;
+        left:15px;
+        height:125vw;
+        animation:float 2s ease-in-out infinite;
+    }
+    .home1-container .text-container {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        width:90%;
+        margin-top:10vw;
+        text-align:center;
+    }
+    .home1-container .title { font-size:5.5vw; }
+    .home1-container .title-top {
+        position:absolute; 
+        left:5%; 
+        top:71%;
+        padding:0 5px;
+    }
+    .home1-container .title-bottom {
+        position:absolute; 
+        left: 5%; 
+        top: 78%;
+        padding:0 5px;
+    }
+    .home1-container .phrase-container {
+        position:absolute; 
+        bottom:12vw; 
+        left:5%;
+        font-size:3.5vw; 
+        line-height:1.2;
+        text-align:left;
+    }
+    .home1-container .btn-price {
+        position:absolute; bottom:0; left:5%;
+        font-size:3vw; padding:6px 20px;
+        box-shadow:0 3px 15px rgba(0,0,0,0.5);
+    }
+
+    
+    .home1-container .clientes-mobile {
+        position:absolute;
+        bottom:14vw;
+        left:50%;
+        transform:translateX(-50%);
+        width:100%;
+        text-align:center;
+        z-index:4;
+    }
+    .home1-container .btn-clientes-mobile {
+        background:var(--black); 
+        color:var(--white); 
+        border-radius:0 20px 0 20px;
+        padding:4px 12px; 
+        font-size: 3vw; 
+        margin-bottom: 6vw;
+    }
+    .home1-container .logos-clientes {
+        position:absolute; 
+        bottom:-118%; 
+        left:-20px;
+        width:110%; 
+        background:var(--grey);
+        display:flex; 
+        justify-content:center;
+        gap:10vw; 
+        padding:2vw 0; 
+        z-index:3;
+    }
+    .home1-container .logo-lff   { width:14.5vw; height:5vw; }
+    .home1-container .logo-cbfs  { height:13vw; }
+    .home1-container .logo-adef  { height:13vw; }
+    .home1-container .logo-futsal{ height:13vw; }
+
+    #left-arrow {
+        position:absolute;
+        top: 50%;
+        font-size:60px;
+        transform:rotate(180deg);
+        cursor:pointer;
+        z-index:10;
+        transition: scale 0.5s ease;
+    }
+    #left-arrow:hover { scale: 1.1; }
+
+    #right-arrow {
+        position:absolute;
+        font-size:60px;
+        top: 50%;
+        right:0;
+        cursor:pointer;
+        z-index:10;
+    }
+    #right-arrow:hover { transform:scale(1.1); }
+}
+
+@media (max-width: 390px) {
+
+    .home1-container .btn-price {
+        position:absolute; bottom:0rem; left:5%;
+        font-size:3vw; padding:6px 20px;
+        box-shadow:0 3px 15px rgba(0,0,0,0.5);
+    }
+
+    .home1-container .title-top {
+        position:absolute; 
+        left:5%; 
+        top:73%;
+        padding:0 5px;
+    }
+    .home1-container .title-bottom {
+        position:absolute; 
+        left: 5%; 
+        top: 80%;
+        padding:0 5px;
+    }
+
+    .home1-container .phrase-container {
+        position:absolute; 
+        bottom:10.5vw; 
+        left:5.5%;
+        font-size:3.5vw; 
+        line-height:1.2;
+        text-align:left;
+    }
+
+    .home1-container .tshirt img {
+        position:relative;
+        top:-30px;
+        left:15px;
+        height:125vw;
+        animation:float 2s ease-in-out infinite;
+    }
+
+
+    .body-container {
+        position: relative;
+        top: 30px;
+    }
+
+}
+

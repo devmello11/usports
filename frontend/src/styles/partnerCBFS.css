@@ -1,0 +1,179 @@
+:root {
+    --header-height: 15dvh;
+}
+
+/* MOBILE FIRST*/
+.cbfs-container-base {
+    & {
+        height: 90dvh;
+        width: 100dvw;
+        overflow: hidden;
+    }
+    & .cbfs-container{
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+.user-view {
+    & {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: fixed;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+        width: 100vw;
+        z-index: 10;
+        overflow: hidden;
+    }
+    & .outfit-name{
+        background-color: var(--orange);
+        text-transform: uppercase;
+        padding: 3px 20px;
+        border-radius: 0px 10px;
+        font-weight: 100;
+    }
+}
+
+.logo-container{
+    & #logoCBFS{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        height: 6rem;
+    }
+}
+
+.outfit-view-container{
+    & {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+
+    & span{
+        color: var(--orange);
+        font-size: 5rem;
+        position: fixed;
+        cursor: pointer;
+        z-index: 20;
+        transition: scale .2s ease-in-out;
+    }
+    & span:hover{
+        scale: 1.1;
+    }
+    & .arrow-outfit-left{
+        left: 0;
+    }
+    & .arrow-outfit-right{
+        right: 0;
+    }
+}
+
+.outfit-view-container .outfit {
+    height: 20rem;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.outfit-view-slider{
+    &{
+        display: flex;
+        position: relative;
+        width: 100vw;
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+.outfit-slide{
+    & {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+    }
+    & h2 {
+        margin-top: 15px;
+    }
+}
+
+.zoom-hint{
+    &{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 52vw;
+    }
+    & #product-img-click{
+        text-align: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.295);
+        text-transform: lowercase;
+    }
+    & #zoom-icon{
+        color: rgba(255, 255, 255, 0.295);
+        font-size: 18px;
+    }
+}
+
+
+.background-slider{
+    display: flex;
+    width: 600vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.background-slide{
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.gradient-background{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--black) 55%, var(--orange) 120%);
+    opacity: 75%;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+/* CONFIGURAÇÕES IMAGEM GRADIENTE COMENTADA
+.gradient-background{
+    &{
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.623);
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+    }
+    & #gradient-background-img {
+        height: 100vh;
+        width: 100vw;
+    }
+}
+*/
