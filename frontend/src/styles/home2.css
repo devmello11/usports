@@ -35,6 +35,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  padding-top: 68px; /* aproxima ainda mais da faixa cinza do header */
 }
 
 .home2-container main {
@@ -62,22 +63,22 @@
 .homem {
   position: absolute;
   top: 5%;
-  left: -11%;
+  left: -13%; /* puxa um pouco mais para esquerda para efeito de "faixa sumindo" */
   z-index: 2;
 }
 .homem img {
-  width: 70vw;
+  width: 62vw; /* aumenta um pouco para reforçar o efeito visual */
   height: auto;
 }
 
 .mulher {
   position: relative;
-  right: 16%;
-  top: -20vw;
+  right: 19%; /* recua 1% para trazer mais a cabeça para dentro */
+  top: -23.5vw; /* desce um pouco para não cortar a cabeça */
   z-index: 2;
 }
 .mulher img {
-  width: 135vw;
+  width: 118vw; /* reduz ligeiramente para evitar corte no topo */
   height: auto;
 }
 
@@ -155,22 +156,22 @@ html, body {
   .homem {
     position: absolute;
     top: 8%;
-    left: -13%;
+    left: -14%;
     z-index: 2;
   }
   .homem img {
-    width: 80vw;
+    width: 68vw; /* ligeiro aumento em telas ≤1280px */
     height: auto;
   }
 
   .mulher {
     position: relative;
-    right: 8%;
-    top: -16vw;
+    right: 11%;
+    top: -17.5vw; /* desce um pouco em ≤1280px */
     z-index: 2;
   }
   .mulher img {
-    width: 140vw;
+    width: 121vw; /* reduz para não cortar em ≤1280px */
     height: auto;
   }
 
@@ -182,13 +183,12 @@ html, body {
   .mulher img{ width:0; }
   .homem-mulher {
     display: flex;
-    top:14%;
+    top:12%; /* aproxima no mobile também */
     left:10vw;
   }
   .homem-mulher img {
-    width:210vw; 
+    width:220vw; /* aumenta no mobile para manter o efeito */
     object-fit:cover;
-
   }
 
   .caixa-texto {

@@ -1,13 +1,18 @@
 .fabricacao-section {
-  /* Compensa o header fixo para centralizar visualmente */
+  /* Ocupa 100% da largura e altura útil da página */
+  width: 100%;
+  margin: 0; /* a seção é a área toda, sem limitar por max-width */
+  box-sizing: border-box;
   padding: 32px 16px;
-  padding-top: 140px;
-  min-height: calc(100vh - 140px);
+  padding-top: 120px; /* compensa o header fixo */
+  padding-bottom: 48px;
+  min-height: 100vh; /* usa a viewport inteira para permitir centramento vertical */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  justify-content: center; /* centraliza verticalmente o conteúdo dentro da seção */
+  align-items: center;     /* centraliza horizontalmente */
+  text-align: center;
+  gap: 24px;
 }
 
 .fabricacao-header {
@@ -27,30 +32,34 @@
 }
 
 .fabricacao-grid {
-  max-width: 1080px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 24px;
   /* Centraliza o grid e seus itens nos dois eixos */
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
+  place-content: center;
+  place-items: center;
 }
 
 .fabricacao-card {
+  width: 100%;
+  max-width: 320px;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 12px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fabricacao-card img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 6px;
 }

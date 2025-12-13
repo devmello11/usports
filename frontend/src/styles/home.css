@@ -57,6 +57,28 @@
     }
 }
 
+/* Logos dos clientes (desktop/tablet) - manter padrão anterior e evitar tamanhos gigantes */
+.partners-bottom-menu {
+    width: 100%;
+}
+.partners-bottom-menu .clientes-mobile { display: none; }
+.partners-bottom-menu .logos-clientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 0;
+}
+.partners-bottom-menu .logos-clientes img {
+    height: 64px;           /* altura padrão controlada */
+    width: auto;            /* mantém proporção original */
+    object-fit: contain;    /* garante que não distorça */
+}
+.partners-bottom-menu .logo-lff   { height: 48px; }
+.partners-bottom-menu .logo-cbfs  { height: 64px; }
+.partners-bottom-menu .logo-adef  { height: 64px; }
+.partners-bottom-menu .logo-futsal{ height: 64px; }
+
 #left-arrow {
     position:absolute;
     top: 50%;

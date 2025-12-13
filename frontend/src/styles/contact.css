@@ -1,36 +1,23 @@
-/* src/styles/contact.css */
-
 /* CODIGO COMENTADO PARA QUE FUNCIONE NO DESKTOP
 @media (min-width:480px) {
-    .contact-section{
-        display: none;
-    }
+    .contact-section{ 
+    /* Limpeza e estrutura correta dos media queries para evitar blocos não fechados */
 
-    .btn-clientes-mobile{
-        display: none;
-    }
+    @media screen and (min-width: 480px) {
 
-    .logos-clientes{
-        display: none;
-    }
-    }
-*/
+        .contact-section{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 24px;
+            padding: 64px 24px;
+            max-width: 1080px;
+            margin: 0 auto;
+            min-height: calc(100vh - 72px);
+            color: var(--white);
+        }
 
-
-/* cole isso no seu contact.css, substituindo o @media para min-width: 480px existente */
-
-@media screen and (min-width: 480px) {
-
-    .contact-section{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
-        padding: 5vw 5vw;
-        color: var(--white);
-    }
-
-    .form-container{
-        &{
+        .form-container{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -38,20 +25,18 @@
             height: 70vh;
             width: 450px;
         }
-        & h2{
+        .form-container h2{
             font-size: 2.7ch;
             margin-bottom: 2rem;
         }
-    }
 
-    form{
-        &{
+        form{
             width: 100%;
         }
-        & label{
+        form label{
             padding: 0px 2px;
         }
-        & input{
+        form input{
             color: var(--white);
             outline: none;
             border: none;
@@ -62,16 +47,16 @@
             margin-top: 5px;
             padding: 2px 10px;
         }
-        & .input-group{
+        form .input-group{
             display: flex;
             flex-direction: column;
             margin-top: 1rem;
         }
-        & .textarea-container{
+        form .textarea-container{
             margin-top: 25px;
-            position: relative; /* Essencial para posicionar o botão dentro */
+            position: relative;
         }
-        & textarea{
+        form textarea{
             margin-top: 5px;
             color: var(--white);
             outline: none;
@@ -79,66 +64,64 @@
             background-color: var(--light-grey);
             height: 7rem;
             border-radius: 10px;
-            padding: 10px 50px 10px 10px; /* Adiciona espaço à direita para o botão */
-            width: calc(100% - 60px); /* Ajusta a largura */
+            padding: 10px 50px 10px 10px;
+            width: calc(100% - 60px);
             resize: none;
         }
-    }
 
-    .btn-send-icon {
-        position: absolute;
-        right: 15px;
-        bottom: 12px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: var(--white);
-        padding: 0;
-        filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.5));
-    }
+        .btn-send-icon {
+            position: absolute;
+            right: 15px;
+            bottom: 12px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            padding: 0;
+            filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.5));
+        }
 
-    .btn-send-icon .material-symbols-outlined {
-        font-size: 32px;
-        transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-    }
+        .btn-send-icon .material-symbols-outlined {
+            font-size: 32px;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
 
-    .btn-send-icon:hover .material-symbols-outlined {
-        transform: scale(1.15);
-        color: var(--orange);
-    }
+        .btn-send-icon:hover .material-symbols-outlined {
+            transform: scale(1.15);
+            color: var(--orange);
+        }
 
-    .btn-send-icon::after {
-        content: 'Enviar Mensagem';
-        position: absolute;
-        top: 45%;
-        right: 130%; 
-        transform: translateY(-50%);
-        background-color: var(--light-grey);
-        color: var(--white);
-        padding: 6px 12px;
-        border-radius: 5px;
-        font-size: 13px;
-        font-weight: 600;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
+        .btn-send-icon::after {
+            content: 'Enviar Mensagem';
+            position: absolute;
+            top: 45%;
+            right: 130%; 
+            transform: translateY(-50%);
+            background-color: var(--light-grey);
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
 
-    .btn-send-icon:hover::after {
-        opacity: 1;
-        visibility: visible;
-    }
+        .btn-send-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
 
-    .contact-page-img{
-        &{
+        .contact-page-img{
             height: 80vh;
             overflow: hidden;
             z-index: 5;
         }
-        & img {
+        .contact-page-img img {
             position: relative;
             top: -100px;
             transform: rotate(-18deg);
@@ -146,152 +129,148 @@
             image-rendering: auto;
         }
     }
-}
 
+    @media screen and (max-width:480px) {
 
-/* MEDIA QUERIES */
-@media screen and (max-width:480px) {
+        .contact-section {
+            margin-top: 0;
+            display: block;
+            background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%);
+            padding: 8vw 5vw 24vw; /* aumenta espaço inferior para evitar corte */
+            color: var(--white);
+            min-height: calc(100vh - 64px);
+        }
 
-    .contact-section {
-        margin-top: -6vh;
-        display: block;
-        background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%);
-        padding: 8vw 5vw;
-        color: var(--white);
+        .form-container h2 {
+            position: relative;
+            font-size: 5vw;
+            left: 0;
+            text-align: center;
+            margin-top: 2vw;
+            margin-bottom: 6vw;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .form-container .input-group {
+            margin-bottom: 4vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container .textarea-container .input-label {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-container .input-label {
+            font-size: 3.5vw; 
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 2vw;
+        }
+
+        .form-container .input-field,
+        .form-container .textarea-field {
+            background-color: var(--light-grey);
+            border: none;
+            border-radius: 1vw;
+            color: var(--white);
+            outline: none;
+        }
+
+        .form-container .input-field {
+            padding: 3vw;
+            font-size: 4vw;
+        }
+
+        .form-container .textarea-field {
+            padding: 4vw 3vw;
+            font-size: 4vw;
+            min-height: 28vw;
+            resize: none;
+        }
+
+        .contact-page-img{
+            display: block;
+            margin-top: 8vw;
+            width: 100%;
+            text-align: center;
+        }
+        .contact-page-img img{
+            width: 70vw;
+            max-width: 380px;
+            height: auto;
+            transform: none;
+            position: static;
+        }
+
+        .form-container .textarea-container {
+            position: relative;
+            margin-top: 10vw;
+        }
+
+        .form-container .textarea-field {
+            padding-right: 15vw; 
+        }
+
+        .btn-send-icon {
+            position: absolute;
+            right: 3vw;
+            bottom: 3vw;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            padding: 0;
+        }
+
+        .btn-send-icon .material-symbols-outlined {
+            font-size: 8vw;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .btn-send-icon:hover .material-symbols-outlined {
+            transform: scale(1.2);
+        }
+
+        .btn-send-icon::after {
+            content: 'Enviar Mensagem'; 
+            position: absolute;          
+            top: 50%;
+            right: 100%;
+            transform: translateY(-50%);
+            margin-right: 10px; 
+            background-color: var(--light-grey);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 3vw; 
+            font-weight: 600;
+            white-space: nowrap; 
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none; 
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .btn-send-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Removido pseudo-elemento extra; usamos padding-bottom amplo acima */
+
     }
 
-    .form-container h2 {
-        position: relative;
-        font-size: 4.7vw;
-        left: -22%;
-        text-align: center;
-        margin-top: 5vw;
-        margin-bottom: 6vw;
-        font-family: "Montserrat", sans-serif;
+    @media (max-width: 390px) {
+
+        .contact-section {
+            margin-top: 0;
+            display: block;
+            background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%);
+            padding: 12vw 5vw 28vw; /* ainda mais espaço para telas muito pequenas */
+            color: var(--white);
+        }
+
     }
-
-    .form-container .input-group {
-        margin-bottom: 4vw;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-container .textarea-container .input-label {
-        width: 100%;
-        text-align: center;
-    }
-
-    .form-container .input-label {
-        font-size: 3.5vw; 
-        font-weight: 600;
-        color: var(--orange);
-        margin-bottom: 2vw;
-    }
-
-    .form-container .input-field,
-    .form-container .textarea-field {
-        background-color: var(--light-grey);
-        border: none;
-        border-radius: 1vw;
-        color: var(--white);
-        outline: none;
-    }
-
-    .form-container .input-field {
-        padding: 3vw;
-        font-size: 4vw;
-    }
-
-    .form-container .textarea-field {
-        padding: 4vw 3vw;
-        font-size: 4vw;
-        min-height: 28vw;
-        resize: none;
-    }
-
-    .contact-page-img{
-        display: none;
-    }
-
-    .form-container .textarea-container .input-label {
-        width: 100%;
-        text-align: center;
-    }
-
-    .form-container .textarea-container {
-        position: relative;
-        margin-top: 10vw;
-    }
-
-    .form-container .textarea-field {
-        padding-right: 15vw; 
-    }
-
-    .btn-send-icon {
-        position: absolute;
-        right: 3vw;
-        bottom: 3vw;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: var(--white);
-        padding: 0;
-    }
-
-    .btn-send-icon .material-symbols-outlined {
-        font-size: 8vw;
-        transition: transform 0.2s ease-in-out;
-    }
-
-    .btn-send-icon:hover .material-symbols-outlined {
-        transform: scale(1.2);
-    }
-
-    .btn-send-icon::after {
-        content: 'Enviar Mensagem'; 
-        position: absolute;          
-        
-        top: 50%;
-        right: 100%;
-        transform: translateY(-50%);
-        margin-right: 10px; 
-
-        background-color: var(--light-grey);
-        color: var(--white);
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 3vw; 
-        font-weight: 600;
-        white-space: nowrap; 
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none; 
-        filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.6));
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .btn-send-icon:hover::after {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .contact-section::after {
-        content: '';
-        display: block;
-        height: 15vh; 
-    }
-
-}
-
-@media (max-width: 390px) {
-
-    .contact-section {
-        margin-top: -13vh;
-        display: block;
-        background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%);
-        padding: 12vw 5vw;
-        color: var(--white);
-    }
-
-
-}

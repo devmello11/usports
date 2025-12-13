@@ -103,7 +103,7 @@ function Home() {
 
         <PartnersBottomBtn/>
 
-        <section className='partners-bottom-menu'>
+        <section className='partners-bottom-menu page-section'>
           <div className="clientes-mobile">
             <button className="btn-clientes-mobile">NOSSOS CLIENTES</button>
             <div className="logos-clientes">
