@@ -1,11 +1,6 @@
+import React from 'react';
+import UnderConstruction from '../../components/UnderConstruction';
 
-
-function Tecidos() {
-  return (
-    <div>
-      PAGINA TECIDOS
-    </div>
-  );
+export default function Tecidos() {
+  return <UnderConstruction title="Tecidos" />;
 }
-
-export default Tecidos;

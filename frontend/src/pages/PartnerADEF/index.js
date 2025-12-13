@@ -1,7 +1,6 @@
+import React from 'react';
+import UnderConstruction from '../../components/UnderConstruction';
+
 export default function PartnerADEF(){
-    return(
-        <div>
-            <h1>PAGINA ADEF</h1>
-        </div>
-    )
+    return <UnderConstruction title="ADEF" />;
 }

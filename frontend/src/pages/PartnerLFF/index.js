@@ -1,7 +1,6 @@
+import React from 'react';
+import UnderConstruction from '../../components/UnderConstruction';
+
 export default function PartnerLFF(){
-    return(
-        <div>
-            <h1>PAGINA LFF</h1>
-        </div>
-    )
+    return <UnderConstruction title="LFF" />;
 }
