@@ -69,8 +69,10 @@ header::before {
         color: var(--white);
         text-decoration: none;
         margin: 0px 12px;
-        font-weight: 600; /* visual moderno sem pesar demais */
-        letter-spacing: 0.8px; /* leve destaque mais "tech" */
+        /* Fonte esportiva e condensada para o menu */
+        font-family: 'Barlow Condensed', 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700; /* presença típica de marcas esportivas */
+        letter-spacing: 1px; /* reforça o ritmo visual em caixa alta */
         transition: transform 150ms ease, filter 150ms ease, opacity 150ms ease, color 150ms ease;
     }
     & a:hover {
@@ -79,6 +81,13 @@ header::before {
         opacity: 0.95;
         color: var(--orange);
     }
+}
+
+/* Mobile: aplica a mesma fonte esportiva nos links do painel */
+.mobile-menu-panel a {
+    font-family: 'Barlow Condensed', 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Botão hamburger (mobile) */
