@@ -56,8 +56,12 @@ export default function Header() {
                         onClick={() => setPartnersOpen((v) => !v)}
                         aria-expanded={partnersOpen}
                         aria-controls="partners-list"
+                        data-open={partnersOpen}
                     >
-                        Parceiros
+                        <span>Parceiros</span>
+                        <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                        </svg>
                     </button>
 
                     {partnersOpen && (
