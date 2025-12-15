@@ -14,6 +14,8 @@ header {
     margin: 0;
     padding: 0 24px; /* conteúdo dentro da faixa */
     color: var(--white);
+    /* Fonte mais moderna para o menu/header */
+    font-family: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     text-transform: uppercase;
     z-index: 999;
     background: transparent;
@@ -67,8 +69,8 @@ header::before {
         color: var(--white);
         text-decoration: none;
         margin: 0px 12px;
-        font-weight: 700; /* mais presença visual */
-        letter-spacing: 0.5px; /* leve espaçamento para legibilidade */
+        font-weight: 600; /* visual moderno sem pesar demais */
+        letter-spacing: 0.8px; /* leve destaque mais "tech" */
         transition: transform 150ms ease, filter 150ms ease, opacity 150ms ease, color 150ms ease;
     }
     & a:hover {
