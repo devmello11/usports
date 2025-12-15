@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/img-logo.png";
 import "../styles/header.css";
 
 export default function Header() {
-    const [showSearch, setShowSearch] = useState(false);
-    const [userSearch, setUserSearch] = useState("");
     const [partnersOpen, setPartnersOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const closeOnOutside = (e) => {
@@ -22,16 +19,7 @@ export default function Header() {
         return () => document.removeEventListener("click", closeOnOutside);
     }, []);
 
-    function Search() {
-        setShowSearch((prev) => !prev);
-    }
-
-    function searchKeydown(e) {
-        if (e.key === "Enter" && userSearch.trim() !== "") {
-            navigate(`/search?q=${encodeURIComponent(userSearch.trim())}`);
-            setUserSearch("");
-        }
-    }
+    
 
     return (
         <header className="header">
@@ -61,37 +49,6 @@ export default function Header() {
             </nav>
 
             <div className="search-and-partners">
-                {/* Busca (mantida comentada) */}
-                {showSearch && (
-                    <input
-                        id="searchInput"
-                        type="text"
-                        placeholder="Buscar..."
-                        className="search-input"
-                        value={userSearch}
-                        onChange={(e) => setUserSearch(e.target.value)}
-                        onKeyDown={searchKeydown}
-                    />
-                )}
-
-                {showSearch ? (
-                    <span
-                        className="material-symbols-outlined close"
-                        id="search-btn"
-                        onClick={Search}
-                    >
-                        close
-                    </span>
-                ) : (
-                    <span
-                        className="material-symbols-outlined search"
-                        id="search-btn"
-                        onClick={Search}
-                    >
-                        search
-                    </span>
-                )}
-
                 <div className="partners-container">
                     <button
                         className="partners-btn"
