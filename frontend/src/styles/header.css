@@ -29,8 +29,11 @@ header::before {
     top: 0;
     left: 0;
     width: 100%;
-        height: 72px; /* altura da faixa ajustada ao padrão do menu */
-    background: rgba(128,128,128,0.22); /* cinza quase transparente */
+    height: 72px; /* altura da faixa ajustada ao padrão do menu */
+    background: rgba(10,10,10,0.35); /* glass/blur sutil */
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     z-index: -1; /* atrás do conteúdo do header */
 }
 
@@ -351,6 +354,84 @@ header::before {
             width: 600px;
             height: 3ch;
         }
+    }
+}
+
+/* =============================
+     REFINO DO MENU (PROFISSIONAL)
+     ============================= */
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    font-size: 20px; /* mais elegante que 28px */
+}
+
+.menu-container a {
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--white);
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.menu-container a:hover {
+    background: rgba(255,255,255,0.06);
+    color: var(--orange);
+    transform: translateY(-1px);
+}
+
+/* CTA destacado */
+.menu-container a.cta-link {
+    background: linear-gradient(90deg, #ff7a1a, #ffb000);
+    color: #1a1a1a;
+    border-radius: 999px;
+    padding: 10px 16px;
+    box-shadow: 0 0 10px rgba(255, 122, 26, 0.35), 0 0 18px rgba(255, 176, 0, 0.25);
+}
+
+.menu-container a.cta-link:hover {
+    filter: brightness(1.06) contrast(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(255, 122, 26, 0.5), 0 0 24px rgba(255, 176, 0, 0.38);
+    color: #1a1a1a;
+}
+
+/* Mobile navigation */
+@media (max-width: 995px) {
+    .menu-container { display: none; }
+    .mobile-menu-btn { display: inline-flex; }
+
+    .mobile-menu-panel {
+        position: fixed;
+        top: 72px;
+        right: 0;
+        width: 78vw;
+        max-width: 380px;
+        height: calc(100vh - 72px);
+        background: rgba(15,15,15,0.95);
+        backdrop-filter: blur(12px) saturate(120%);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        box-shadow: -10px 0 28px rgba(0,0,0,0.35);
+    }
+
+    .mobile-menu-panel a {
+        padding: 12px 10px;
+        border-radius: 8px;
+    }
+
+    .mobile-menu-backdrop {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
     }
 }
 
