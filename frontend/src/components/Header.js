@@ -44,7 +44,7 @@ export default function Header() {
                 <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
                 <Link to="/fabricacao" onClick={() => setMobileMenuOpen(false)}>Fabricação</Link>
                 <Link to="/orcamento" className="cta-link" onClick={() => setMobileMenuOpen(false)}>
-                    Faça um orçamento
+                    Simulador
                 </Link>
             </nav>
 
@@ -93,7 +93,7 @@ export default function Header() {
                     <div className="mobile-menu-panel" role="dialog" aria-modal="true">
                         <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
                         <Link to="/fabricacao" onClick={() => setMobileMenuOpen(false)}>Fabricação</Link>
-                        <Link to="/orcamento" className="cta-link" onClick={() => setMobileMenuOpen(false)}>Faça um orçamento</Link>
+                        <Link to="/orcamento" className="cta-link" onClick={() => setMobileMenuOpen(false)}>Simulador</Link>
                     </div>
                 </>
             )}
