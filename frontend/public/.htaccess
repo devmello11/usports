@@ -11,8 +11,9 @@
   # Do not rewrite backend API routes
   RewriteCond %{REQUEST_URI} !^/api/
 
-  # Allow both /orcamento and /orcamento/
-  # (No explicit redirect; both are served by index.html)
+  # Canonicalize /orcamento to have trailing slash to evitar caminhos relativos quebrados
+  RewriteCond %{REQUEST_URI} ^/orcamento$
+  RewriteRule ^orcamento$ /orcamento/ [R=302,L]
 
   # Fallback all other requests to React app
   RewriteRule . /index.html [L]

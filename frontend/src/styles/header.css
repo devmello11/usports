@@ -19,7 +19,7 @@ header {
     text-transform: uppercase;
     z-index: 999;
     background: transparent;
-    pointer-events: none; /* evita formar "faixa" bloqueando cliques por baixo */
+    pointer-events: auto; /* permite interação com o menu fixo */
 }
 
 /* Faixa fixa no topo do header */
@@ -225,8 +225,9 @@ header::before {
         border-radius: 14px;
         opacity: 0;
         transform: translateY(-6px);
-        pointer-events: none;
+    pointer-events: auto;
         transition: opacity 180ms ease, transform 180ms ease;
+        z-index: 2000; /* garante que o dropdown fique acima do conteúdo da página */
     }
     & .partners-item{
         color: var(--white);
