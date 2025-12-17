@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Orcamento() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Canonicaliza para /orcamento/ quando necessário (evita paths relativos quebrados)
+  useEffect(() => {
+    if (location.pathname === '/orcamento') {
+      navigate('/orcamento/', { replace: true });
+    }
+  }, [location.pathname, navigate]);
+
   return (
     <section style={{ paddingTop: '120px', minHeight: '100vh' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px' }}>
