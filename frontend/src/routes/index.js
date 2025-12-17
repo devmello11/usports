@@ -33,6 +33,8 @@ export default function RoutesApp(){
 
             <Route path='/apresentacao' element={ <Landing/> } />
             <Route path='/orcamento' element={ <Orcamento/> } />
+            <Route path='/orcamento/' element={ <Orcamento/> } />
+            <Route path='/orcamento/*' element={ <Orcamento/> } />
 
         </Routes>
     )

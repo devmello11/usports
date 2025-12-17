@@ -1,0 +1,19 @@
+# SPA rewrite rules for React Router on Apache (Hostinger)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Do not rewrite backend API routes
+  RewriteCond %{REQUEST_URI} !^/api/
+
+  # Allow both /orcamento and /orcamento/
+  # (No explicit redirect; both are served by index.html)
+
+  # Fallback all other requests to React app
+  RewriteRule . /index.html [L]
+</IfModule>
