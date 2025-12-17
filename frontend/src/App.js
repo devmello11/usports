@@ -3,6 +3,7 @@ import RoutesApp from './routes';
 
 import Header from './components/Header';
 import WhatsappBtn from './components/WhatsappBtn';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <Header/>
         <WhatsappBtn/>
         <RoutesApp/>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -2,6 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Fabricacao from '../pages/Fabricacao';
+import Clubes from '../pages/Clubes';
 import Design from '../pages/Design';
 import Tecidos from '../pages/Tecidos';
 import SearchResults from '../pages/SearchResults';
@@ -20,6 +21,7 @@ export default function RoutesApp(){
             <Route path='/' element={ <Home/> } />
             <Route path='/tecidos' element={ <Tecidos/> } />
             <Route path='/fabricacao' element={ <Fabricacao/> } />
+            <Route path='/clubes' element={ <Clubes/> } />
             <Route path='/design' element={ <Design/> } />
 
             {/* PAGINA SEARCH COMENTADA

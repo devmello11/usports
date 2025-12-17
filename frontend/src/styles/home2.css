@@ -1,9 +1,18 @@
 /* src/styles/home2.css */
 .home-container-base {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  /*overflow: hidden;*/
+  width: 100%;
+  height: auto; /* altura conforme conteúdo do banner */
+  background: #000; /* fundo preto minimalista */
+  padding-top: 72px; /* evita o header fixo cobrir o topo do banner */
+}
+
+/* Banner container */
+.home-banner { width: 100%; }
+.home-banner img { width: 100%; height: auto; display: block; }
+
+@media (max-width: 996px) {
+  .home-container-base { padding-top: 64px; }
 }
 
 .slider {

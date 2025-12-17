@@ -8,32 +8,36 @@
         justify-content: center;
         align-items: center;
         background-color: var(--dark-grey);
-        margin: 0 40px;
-        height: 5rem;
+        margin: 0 24px;
+        height: clamp(56px, 8vh, 88px);
+        padding: 8px 16px;
         border-radius: 50px;
         filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.904));
         position: relative;
-        top: -6rem;
+        top: -3rem; /* um pouco mais abaixo do banner */
     }
 
     .partners-bottom-container{
-        width: 70%;
+        width: min(100%, 1100px);
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        gap: clamp(12px, 4vw, 40px);
+        flex-wrap: wrap; /* permite quebrar em duas linhas se necessário */
     }
 
     .logoPartnersImages{
-        height: 60px;
+        height: clamp(32px, 5vw, 60px);
+        max-height: 64px;
+        width: auto;
+        object-fit: contain;
         transition: scale 0.3s ease-in-out;
     }
     .logoPartnersImages:hover{
         scale: 1.15;
     }
 
-    #logo-image-lff{
-            height: 30px;
-    }
+    #logo-image-lff{ height: clamp(24px, 3.6vw, 40px); }
 }
 
 @media screen and (max-width: 480px) {
@@ -44,33 +48,37 @@
         justify-content: center;
         align-items: center;
         background-color: var(--dark-grey);
-        margin: 0 0;
-        width: 100%;
-        height: 3.3rem;
+        margin: 0 8px;
+        width: calc(100% - 16px);
+        min-height: 48px;
+        height: auto;
+        padding: 6px 10px;
         border-radius: 50px;
         filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.904));
         position: relative;
-        top: -3.8rem;
+        top: -2rem; /* um pouco mais abaixo no mobile */
     }
 
     .partners-bottom-container{
-        width: 79%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; /* evita quebra visual */
     }
 
     .logoPartnersImages{
-        height: 40px;
+        height: clamp(24px, 8vw, 40px);
+        width: auto;
+        object-fit: contain;
         transition: scale 0.3s ease-in-out;
     }
     .logoPartnersImages:hover{
         scale: 1.2;
     }
 
-    #logo-image-lff{
-            height: 21px;
-    }
+    #logo-image-lff{ height: clamp(18px, 6.5vw, 28px); }
 
 }
 
@@ -87,7 +95,7 @@
         border-radius: 50px;
         filter: drop-shadow(5px 8px 10px rgba(0, 0, 0, 0.904));
         position: relative;
-        top: -7.7rem;
+        top: -3rem; /* mais abaixo em telas muito pequenas */
     }
 
 }

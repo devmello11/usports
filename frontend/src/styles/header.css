@@ -1,6 +1,4 @@
 /* MENU ABERTO */
-
-/* TELAS MAIORES */
 header {
     position: fixed;
     left: 0;
@@ -14,28 +12,16 @@ header {
     margin: 0;
     padding: 0 24px; /* conteúdo dentro da faixa */
     color: var(--white);
-    /* Fonte mais moderna para o menu/header */
-    font-family: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    /* Fonte padrão solicitada: Montserrat */
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     text-transform: uppercase;
     z-index: 999;
-    background: transparent;
+    background: #000; /* header minimalista preto */
     pointer-events: auto; /* permite interação com o menu fixo */
 }
 
 /* Faixa fixa no topo do header */
-header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px; /* altura da faixa ajustada ao padrão do menu */
-    background: rgba(10,10,10,0.35); /* glass/blur sutil */
-    backdrop-filter: blur(10px) saturate(120%);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    z-index: -1; /* atrás do conteúdo do header */
-}
+header::before { content: none; display: none; }
 
 .logo{
     height: 60px;
@@ -55,7 +41,7 @@ header::before {
 
 .menu-container{
     & {
-        position: static; /* no fluxo do header */
+        position: static;
         height: 100%;
         display: flex;
         align-items: center;
@@ -72,8 +58,8 @@ header::before {
         color: var(--white);
         text-decoration: none;
         margin: 0px 12px;
-        /* Fonte esportiva e condensada para o menu */
-        font-family: 'Barlow Condensed', 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        /* Usar Montserrat conforme solicitado */
+        font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         font-weight: 700; /* presença típica de marcas esportivas */
         letter-spacing: 1px; /* reforça o ritmo visual em caixa alta */
         transition: transform 150ms ease, filter 150ms ease, opacity 150ms ease, color 150ms ease;
@@ -88,7 +74,7 @@ header::before {
 
 /* Mobile: aplica a mesma fonte esportiva nos links do painel */
 .mobile-menu-panel a {
-    font-family: 'Barlow Condensed', 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -279,6 +265,8 @@ header::before {
 /* TELAS ATE 1280px */
 @media screen and (min-width: 1150px) and (max-width: 1500px){
 
+    header { height: 80px; }
+
     .logo{
     height: 45px;
     padding-left: 10px;
@@ -300,23 +288,9 @@ header::before {
         transform: scale(1.03);
     }
 
-    .menu-container{
-        & {
-            font-size: 26px; /* um pouco maior para médio desktop */
-            gap: 14px;
-        }
-        & a {
-            margin: 0px 10px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-            transition: transform 150ms ease, filter 150ms ease, opacity 150ms ease, color 150ms ease;
-        }
-        & a:hover { transform: scale(1.03); opacity: 0.95; }
-        & #arrow-down-icon {
-            width: 3rem;
-            height: 3rem;
-        }
-    }
+    .menu-container { font-size: 28px; gap: 18px; }
+    .menu-container a { padding: 10px 14px; }
+    .menu-container #arrow-down-icon { width: 3rem; height: 3rem; }
     
     .search-and-partners {
         & {
@@ -338,23 +312,8 @@ header::before {
         */ 
     }
 
-    .partners-container{
-        & .partners-btn{
-            height: 40px;
-            width: fit-content;
-            padding: 10px 25px;
-            font-size: 20px;
-        }
-        & #partnersArrow{
-            width: 3.2rem;
-            height: 3.2rem;
-        }
-        & .partners-list{
-            top: 104px;
-            width: 130px;
-            padding: 50px 33px;
-        }
-    }
+    .partners-container .partners-btn{ height: 44px; padding: 0 20px; font-size: 18px; }
+    .partners-container #partnersArrow{ width: 3.2rem; height: 3.2rem; }
 
     @keyframes showSearch {
         0% {
@@ -375,12 +334,12 @@ header::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 22px; /* mais espaçamento entre links */
     font-size: 20px; /* mais elegante que 28px */
 }
 
 .menu-container a {
-    padding: 10px 12px;
+    padding: 12px 14px; /* área de clique maior */
     border-radius: 10px;
     color: var(--white);
     text-decoration: none;
@@ -448,6 +407,7 @@ header::before {
 
 @media screen and (min-width: 996px) and (max-width: 1150px){
     header {
+        height: 76px;
         margin-top: 0;
         padding: 12px 20px;
     }
@@ -458,24 +418,9 @@ header::before {
     }
     .logo-link:hover .logo{ transform: scale(1.03); }
 
-    .menu-container{
-        & {
-            margin-left: 0;
-            font-size: 24px;
-            gap: 12px;
-        }
-        & a {
-            margin: 0px 10px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-            transition: transform 150ms ease, filter 150ms ease, opacity 150ms ease, color 150ms ease;
-        }
-        & a:hover { transform: scale(1.03); opacity: 0.95; }
-        & #arrow-down-icon {
-            width: 2.8rem;
-            height: 2.8rem;
-        }
-    }
+    .menu-container { margin-left: 0; font-size: 26px; gap: 18px; }
+    .menu-container a { padding: 12px 14px; }
+    .menu-container #arrow-down-icon { width: 2.8rem; height: 2.8rem; }
     .search-and-partners {
         & {
             display: flex;
@@ -492,23 +437,44 @@ header::before {
         }
         */
     }
-    .partners-container{
-        & .partners-btn{
-            width: fit-content;
-            padding: 5px 0px 5px 10px;
-            font-size: 19px;
-        }
-        & #partnersArrow{
-            width: 2.8rem;
-            height: 2.8rem;
-        }
-        & .partners-list{
-            top: 104px;
-            width: 130px;
-            padding: 50px 33px;
-        }
-    }
+    .partners-container .partners-btn{ height: 42px; padding: 0 16px; font-size: 17px; }
+    .partners-container #partnersArrow{ width: 2.8rem; height: 2.8rem; }
 }
+
+/* Dropdown de Clubes */
+.clubs-container{ position: relative; pointer-events: auto; }
+.clubs-container .clubs-btn{
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 42px; padding: 14px 16px; border-radius: 10px;
+    background: transparent; border: none; box-shadow: none;
+        font-size: 20px; font-weight: 700; letter-spacing: 1px; color: var(--white);
+        font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    cursor: pointer; transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    text-transform: uppercase;
+}
+.clubs-container .clubs-btn:hover{
+    background: rgba(255,255,255,0.06); color: var(--orange); transform: translateY(-1px);
+}
+.clubs-container .clubs-btn .chevron{ width: 14px; height: 14px; opacity: 0.9; transition: transform 180ms ease; }
+.clubs-container .clubs-btn[data-open="true"] .chevron{ transform: rotate(180deg); }
+.clubs-container .clubs-list{
+    position: absolute; top: calc(100% + 10px); left: 0; width: 240px; padding: 12px;
+    background: rgba(20,20,20,0.6); backdrop-filter: blur(10px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 6px; z-index: 2000; color: var(--white);
+}
+.clubs-container .clubs-item, .clubs-container .clubs-lastitem{
+    color: var(--white); text-decoration: none; border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 10px; padding: 10px 12px; background: rgba(255,255,255,0.06);
+    transition: background 160ms ease, transform 160ms ease, color 160ms ease;
+}
+.clubs-container .clubs-item:hover, .clubs-container .clubs-lastitem:hover{
+    background: rgba(255,255,255,0.14); transform: translateY(-1px); color: var(--white);
+}
+
+/* Submenu agrupado no mobile */
+.mobile-submenu{ display: flex; flex-direction: column; gap: 8px; padding: 8px 0; }
+.mobile-submenu-title{ font-weight: 700; opacity: 0.9; }
 
 /* TELAS CELULARES */
 @media screen and (max-width: 996px) {
@@ -519,10 +485,10 @@ header::before {
         grid-template-columns: auto 1fr auto;
         align-items: center;
         color: var(--white);
-        background-color: var(--dark-grey);
+        background-color: #000; /* minimalista preto */
         margin-top: 0;
         padding: 0 10px;
-        pointer-events: none;
+        pointer-events: auto;
         overflow: visible; /* permite dropdown sair do header */
     }
     header::before { height: 64px; }

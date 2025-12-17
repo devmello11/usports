@@ -1,13 +1,9 @@
 // src/pages/Home/index.js
-import React, { useEffect, useState, useRef } from 'react'; 
+import React, { useRef, useState } from 'react'; 
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
 
-
-import shirt from '../../assets/img-tshirt.png';
-import imagemHomem from '../../assets/img-man.png';
-import imagemMulher from '../../assets/img-woman-fita.png';
-import imagemHomemMulher from '../../assets/img-man-woman.png';
+import bannerUsports from '../../assets/bannerUsports.png';
 import animacaoPaginaContato from '../../assets/contact-animation.gif';
 import logoLFF from '../../assets/LFF.png';
 import logoCBFS from '../../assets/CBFS_logo-07.png';
@@ -20,18 +16,6 @@ import '../../styles/home.css';
 import '../../styles/contact.css';
 
 function Home() {
-
-  const [currentPage, setCurrentPage] = useState(1);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentPage(prev => (prev === 1 ? 2 : 1));
-    }, 15000);
-    return () => clearTimeout(timer);
-  }, [currentPage]);
-  const showPrevious = () => setCurrentPage(1);
-  const showNext     = () => setCurrentPage(2);
-  const sliderTranslate = `translateX(-${(currentPage - 1) * 100}vw)`;
-
   const formRef = useRef(null);
   const [status, setStatus] = useState('');
 
@@ -59,46 +43,14 @@ function Home() {
 
   return (
     <>
-      {/* --- SEÇÃO DO SLIDER E OUTROS COMPONENTES --- */}
+      {/* --- BANNER ESTÁTICO --- */}
       <section className="home-container-base">
-        <div className="slider" style={{ transform: sliderTranslate }}>
-          {/* SLIDE 1 */}
-          <section className="home2-container slide">
-            <main>
-              <span className="material-symbols-outlined" id="right-arrow-2" onClick={showNext}>double_arrow</span>
-              <div className="container-imagens">
-                <div className="homem"><img src={imagemHomem} alt="Homem vestindo uniforme" /></div>
-                <div className="mulher"><img src={imagemMulher} alt="Mulher com fita métrica" /></div>
-                <div className="homem-mulher"><img src={imagemHomemMulher} alt="Homem e Mulher com uniformes" /></div>
-              </div>
-              <div className="caixa-texto">
-                <h1 className="titulo">DESIGN EXCLUSIVO</h1>
-                <p className="subtitulo">Entre em contato com a nossa equipe.</p>
-              </div>
-            </main>
-          </section>
-
-          {/* SLIDE 2 */}
-          <section className="home1-container slide">
-            <span className="material-symbols-outlined" id="left-arrow" onClick={showPrevious}>double_arrow</span>
-            <span className="material-symbols-outlined" id="right-arrow" onClick={showPrevious}>double_arrow</span>
-            <main className="body-container">
-              <div className="tshirt"><img src={shirt} alt="Camisa de time" /></div>
-              <div className="text-container">
-                <div className="title">
-                  <h1 className="title-top">SEU TIME,</h1>
-                  <h1 className="title-bottom">SUA IDENTIDADE</h1>
-                </div>
-                <div className="phrase-container">
-                  <p>Uniformes personalizados</p>
-                  <p>com qualidade e entrega rápida</p>
-                </div>
-                <Link to="#" className="btn-price">
-                  CLIQUE AQUI E FAÇA SEU ORÇAMENTO
-                </Link>
-              </div>
-            </main>
-          </section>
+        <div className="home-banner">
+          <img
+            src={bannerUsports}
+            alt="Banner Usports - Design exclusivo"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
         </div>
 
         <PartnersBottomBtn/>
