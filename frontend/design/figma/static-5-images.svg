@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1219.32" height="446.18" viewBox="0 0 1219.32 446.18" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1f1f1f; }
+      .card { fill: #2a2a2a; stroke: #3a3a3a; stroke-width: 2; }
+      .label { fill: #bfbfbf; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1219.32" height="446.18" rx="16"/>
+
+  <!-- Title -->
+  <text x="24" y="36" fill="#ffffff" font-size="20" font-weight="600" font-family="Arial, Helvetica, sans-serif">Galeria Estática (5 imagens)</text>
+
+  <!-- Cards area: padding 24 left/right, 24 top below title, 24 bottom; gap 16 -->
+  <!-- Computed each card width ≈ 221.46, height 360 -->
+  
+  <!-- Card 1 -->
+  <rect class="card" x="24" y="60" width="221.46" height="360" rx="16"/>
+  <text class="label" x="24" y="60" text-anchor="middle">
+    <tspan x="134.73" y="238">Imagem 1</tspan>
+    <tspan x="134.73" y="258">(substitua no Figma)</tspan>
+  </text>
+
+  <!-- Card 2 -->
+  <rect class="card" x="261.46" y="60" width="221.46" height="360" rx="16"/>
+  <text class="label" x="261.46" y="60" text-anchor="middle">
+    <tspan x="372.19" y="238">Imagem 2</tspan>
+    <tspan x="372.19" y="258">(substitua no Figma)</tspan>
+  </text>
+
+  <!-- Card 3 -->
+  <rect class="card" x="498.92" y="60" width="221.46" height="360" rx="16"/>
+  <text class="label" x="498.92" y="60" text-anchor="middle">
+    <tspan x="609.65" y="238">Imagem 3</tspan>
+    <tspan x="609.65" y="258">(substitua no Figma)</tspan>
+  </text>
+
+  <!-- Card 4 -->
+  <rect class="card" x="736.38" y="60" width="221.46" height="360" rx="16"/>
+  <text class="label" x="736.38" y="60" text-anchor="middle">
+    <tspan x="847.11" y="238">Imagem 4</tspan>
+    <tspan x="847.11" y="258">(substitua no Figma)</tspan>
+  </text>
+
+  <!-- Card 5 -->
+  <rect class="card" x="973.84" y="60" width="221.46" height="360" rx="16"/>
+  <text class="label" x="973.84" y="60" text-anchor="middle">
+    <tspan x="1084.57" y="238">Imagem 5</tspan>
+    <tspan x="1084.57" y="258">(substitua no Figma)</tspan>
+  </text>
+
+  <!-- Optional footer note -->
+  <text x="24" y="430" fill="#8a8a8a" font-size="12" font-family="Arial, Helvetica, sans-serif">Dimensões: 1219.32 x 446.18 px (ajuste conforme necessário)</text>
+</svg>

@@ -16,13 +16,13 @@ body {
   min-height: 100vh;
   display: block; /* evita centralizar globalmente e alterar layouts existentes */
   overflow-x: hidden; /* evita faixa visual à direita por overflow horizontal */
-  background: #000; /* mantém fundo escuro conforme tema atual */
+  background: var(--dark-grey); /* usa cinza global */
 }
 
 /* Padrão de seção centralizada reutilizável */
 .page-section {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1280px; /* aumenta tamanho da "tela do meio" */
   margin: 0 auto;
   padding: 32px 16px;
   padding-top: 96px;
@@ -40,9 +40,7 @@ body {
 
 body, html {
   position: relative;
-  background: linear-gradient(to bottom, var(--dark-grey) 53%, var(--orange) 123%) !important;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* importante */
+  background: var(--dark-grey) !important; /* aplica cinza global em todo site */
   height: 100vh;
   width: 100%;
   color: var(--white);

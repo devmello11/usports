@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   height: auto; /* altura conforme conteúdo do banner */
-  background: #000; /* fundo preto minimalista */
+  background: var(--dark-grey); /* fundo padrão global */
   padding-top: 72px; /* evita o header fixo cobrir o topo do banner */
 }
 
@@ -13,6 +13,94 @@
 
 @media (max-width: 996px) {
   .home-container-base { padding-top: 64px; }
+}
+
+/* Five images strip */
+.five-images-section {
+  width: 100%;
+  background-color: var(--dark-grey);
+}
+.five-images-container {
+  max-width: 1219.32px;
+  margin: 0 auto;
+  padding: 34px 16px 24px; /* +10px no padding-top */
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap; /* mantém na mesma linha */
+  overflow-x: auto; /* permite rolar no mobile se necessário */
+}
+.five-image-card {
+  width: clamp(180px, 16vw, 222.26px); /* reduz em telas menores, mantém limite superior */
+  aspect-ratio: calc(222.26 / 446.18);
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+}
+.five-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1280px) {
+  .five-images-container { gap: 12px; }
+}
+
+@media (max-width: 996px) {
+  .five-image-card { width: clamp(140px, 24vw, 180px); }
+}
+
+@media (max-width: 600px) {
+  .five-image-card { width: clamp(120px, 40vw, 160px); }
+}
+
+/* Clubs links gallery (Group 9) */
+.clubs-group-9 {
+  position: relative;
+  width: min(1107px, 100%);
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 24px;
+  padding-top: 10px; /* espaçamento superior solicitado */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: nowrap; /* mantém na mesma linha no desktop */
+  overflow-x: auto; /* permite rolagem horizontal em telas pequenas */
+  z-index: 1; /* garante visibilidade acima de camadas inferiores */
+}
+.clubs-card {
+  position: relative;
+  flex: 0 0 170.31px;
+  width: 170.31px;
+  height: 127.18px;
+  background: #EF7F2C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  overflow: hidden;
+}
+.clubs-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Remove posicionamento absoluto em desktop para evitar sumiço por overflow */
+
+@media (max-width: 996px) {
+  .clubs-card { flex: 0 0 clamp(140px, 24vw, 170.31px); height: auto; aspect-ratio: calc(170.31 / 127.18); }
+}
+
+@media (max-width: 600px) {
+  .clubs-group-9 { gap: 30px; }
+  .clubs-card { flex: 0 0 clamp(120px, 40vw, 150px); border-radius: 22px; }
 }
 
 .slider {

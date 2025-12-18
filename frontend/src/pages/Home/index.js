@@ -1,16 +1,12 @@
 // src/pages/Home/index.js
 import React, { useRef, useState } from 'react'; 
-import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
 
 import bannerUsports from '../../assets/bannerUsports.png';
 import animacaoPaginaContato from '../../assets/contact-animation.gif';
-import logoLFF from '../../assets/LFF.png';
-import logoCBFS from '../../assets/CBFS_logo-07.png';
-import logoADEF from '../../assets/ADEF.png';
-import logoFutsal from '../../assets/SUB_17.png';
 
-import PartnersBottomBtn from '../../components/PartnersBottomBtn.js';
+import BannerFiveImages from '../../components/BannerFiveImages.js';
+import ClubsLinksGallery from '../../components/ClubsLinksGallery.js';
 import '../../styles/home2.css';
 import '../../styles/home.css';
 import '../../styles/contact.css';
@@ -53,19 +49,13 @@ function Home() {
           />
         </div>
 
-        <PartnersBottomBtn/>
+        {/* --- FAIXA COM 5 IMAGENS --- */}
+        <BannerFiveImages/>
 
-        <section className='partners-bottom-menu page-section'>
-          <div className="clientes-mobile">
-            <button className="btn-clientes-mobile">NOSSOS CLIENTES</button>
-            <div className="logos-clientes">
-              <Link to="/lff"><img className="logo-lff" src={logoLFF} alt="Logo LFF" /></Link>
-              <Link to="/cbfs"><img className="logo-cbfs" src={logoCBFS} alt="Logo CBFS" /></Link>
-              <Link to="/adef"><img className="logo-adef" src={logoADEF} alt="Logo ADEF" /></Link>
-              <Link to="/sub17"><img className="logo-futsal" src={logoFutsal} alt="Logo Futsal Sub17" /></Link>
-            </div>
-          </div>
-        </section>
+        {/* --- GALERIA DE LOGOS (Group 9) --- */}
+        <ClubsLinksGallery/>
+
+        {/* partners-bottom-menu removido a pedido */}
       </section>
 
       {/* --- SEÇÃO DE CONTATO --- */}

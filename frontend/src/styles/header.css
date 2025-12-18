@@ -16,7 +16,7 @@ header {
     font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
     text-transform: uppercase;
     z-index: 999;
-    background: #000; /* header minimalista preto */
+    background: var(--dark-grey); /* header com cinza global */
     pointer-events: auto; /* permite interação com o menu fixo */
 }
 
