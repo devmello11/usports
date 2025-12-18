@@ -74,6 +74,7 @@
   flex-wrap: nowrap; /* mantém na mesma linha no desktop */
   overflow-x: auto; /* permite rolagem horizontal em telas pequenas */
   z-index: 1; /* garante visibilidade acima de camadas inferiores */
+  scroll-margin-top: 90px; /* compensa o header fixo ao navegar via âncora */
 }
 .clubs-card {
   position: relative;
@@ -159,7 +160,6 @@
 
 .product-grid-container {
   width: min(1158px, 100%);
-  height: 380px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
