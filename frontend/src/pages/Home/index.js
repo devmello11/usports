@@ -1,5 +1,6 @@
 // src/pages/Home/index.js
-import React, { useRef, useState } from 'react'; 
+import React, { useRef, useState, useEffect } from 'react'; 
+import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser'; 
 
 import bannerUsports from '../../assets/bannerUsports.png';
@@ -7,6 +8,7 @@ import animacaoPaginaContato from '../../assets/contact-animation.gif';
 
 import BannerFiveImages from '../../components/BannerFiveImages.js';
 import ClubsLinksGallery from '../../components/ClubsLinksGallery.js';
+import ProductGrid from '../../components/ProductGrid.js';
 import '../../styles/home2.css';
 import '../../styles/home.css';
 import '../../styles/contact.css';
@@ -14,6 +16,16 @@ import '../../styles/contact.css';
 function Home() {
   const formRef = useRef(null);
   const [status, setStatus] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location && location.hash === '#clubs-group-9') {
+      const el = document.getElementById('clubs-group-9');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +66,9 @@ function Home() {
 
         {/* --- GALERIA DE LOGOS (Group 9) --- */}
         <ClubsLinksGallery/>
+
+  {/* --- GRID DE PRODUTOS (Group 10) --- */}
+  <ProductGrid/>
 
         {/* partners-bottom-menu removido a pedido */}
       </section>

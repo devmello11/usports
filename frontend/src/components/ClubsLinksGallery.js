@@ -13,7 +13,7 @@ export default function ClubsLinksGallery() {
   const cards = [l1, l2, l3, l4, l5];
 
   return (
-    <div className="clubs-group-9">
+    <div className="clubs-group-9" id="clubs-group-9">
       {cards.map((src, idx) => (
         <div key={idx} className="clubs-card">
           <img src={src} alt={`Clube ${idx + 1}`} />

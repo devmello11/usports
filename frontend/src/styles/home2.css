@@ -66,41 +66,47 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 24px;
-  padding-top: 10px; /* espaçamento superior solicitado */
+  padding-top: 15px; /* espaçamento superior solicitado */
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 30px;
+  gap: 50px; /* ainda mais compacto */
   flex-wrap: nowrap; /* mantém na mesma linha no desktop */
   overflow-x: auto; /* permite rolagem horizontal em telas pequenas */
   z-index: 1; /* garante visibilidade acima de camadas inferiores */
 }
 .clubs-card {
   position: relative;
-  flex: 0 0 170.31px;
-  width: 170.31px;
-  height: 127.18px;
+  flex: 0 0 138px; /* reduzir novamente */
+  width: 138px;
+  height: 130px; /* altura proporcional */
   background: #EF7F2C;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 28px;
   overflow: hidden;
+  display: flex;               /* centraliza o conteúdo */
+  justify-content: center;     /* centraliza horizontalmente */
+  align-items: center;         /* centraliza verticalmente */
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 .clubs-card img {
-  width: 100%;
-  height: 100%;
+  width: 90px;
+  height: 130px;
   object-fit: contain;
   display: block;
 }
 
+.clubs-card:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 22px rgba(0,0,0,0.35); }
+
 /* Remove posicionamento absoluto em desktop para evitar sumiço por overflow */
 
 @media (max-width: 996px) {
-  .clubs-card { flex: 0 0 clamp(140px, 24vw, 170.31px); height: auto; aspect-ratio: calc(170.31 / 127.18); }
+  .clubs-card { flex: 0 0 clamp(100px, 20vw, 118px); height: auto; aspect-ratio: calc(118 / 90); }
 }
 
 @media (max-width: 600px) {
-  .clubs-group-9 { gap: 30px; }
-  .clubs-card { flex: 0 0 clamp(120px, 40vw, 150px); border-radius: 22px; }
+  .clubs-group-9 { gap: 12px; }
+  .clubs-card { flex: 0 0 clamp(92px, 34vw, 110px); border-radius: 20px; }
 }
 
 .slider {
@@ -142,6 +148,92 @@
   height: 95%;
   position: relative;
   overflow: hidden;
+}
+
+/* --- GRID DE PRODUTOS (Group 10) --- */
+.product-grid-section {
+  width: 100%;
+
+  padding: 50px 16px 28px;
+}
+
+.product-grid-container {
+  width: min(1158px, 100%);
+  height: 380px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.product-card {
+  background: #D9D9D9;
+  border: 1px solid rgba(255,255,255,0.06);
+  
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+}
+
+/* Imagem em tamanho padrão (fixo) */
+.product-image-wrap {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  background: #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-title {
+  margin: 13px 0 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  
+  color: black;
+  text-align: left; /* alinhar título à esquerda */
+  width: 100%;              /* ocupar toda a largura do card */
+  align-self: stretch;      /* esticar como item flex para facilitar alinhamento */
+}
+.product-desc {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem; /* pequena */
+  color: black;
+  text-align: left; /* alinhar descrição à esquerda */
+  width: 100%;              /* ocupar toda a largura do card */
+  align-self: stretch;      /* esticar para alinhar corretamente dentro do flex */
+}
+
+@media (max-width: 996px) {
+  .product-grid-container { grid-template-columns: repeat(3, 1fr); }
+  .product-image-wrap { width: 160px; height: 160px; }
+}
+@media (max-width: 720px) {
+  .product-grid-container { grid-template-columns: repeat(2, 1fr); }
+  .product-image-wrap { width: 150px; height: 150px; }
+}
+@media (max-width: 420px) {
+  .product-grid-container { grid-template-columns: 1fr; }
+  .product-image-wrap { width: 200px; height: 200px; }
 }
 
 .home2-container *,
@@ -205,7 +297,7 @@
 .titulo {
   display: inline-block;
   background-color: var(--orange);
-  padding: 2px 5px;
+  padding: 5px 10px; /* aumenta a faixa laranja ao redor do título */
   margin-bottom: 0.6rem;
   font-size: 2.5vw;
   font-family: "Montserrat", sans-serif;
@@ -295,7 +387,7 @@ html, body {
     text-align:left;
   }
   .titulo {
-    padding:2px 3px;
+    padding:4px 6px; /* aumenta a faixa laranja no mobile */
     font-size:6vw;
   }
   .subtitulo {
@@ -375,7 +467,7 @@ html, body {
     text-align:left;
   }
   .titulo {
-    padding:2px 3px;
+    padding:4px 6px; /* aumenta a faixa laranja em ≤390px */
     font-size:6vw;
   }
   .subtitulo {

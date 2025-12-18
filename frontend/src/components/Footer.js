@@ -11,9 +11,9 @@ export default function Footer(){
           <section className="footer-col">
             <h3 className="footer-title">Categorias</h3>
             <ul>
-              <li><Link to="#">Todos os Produtos</Link></li>
-              <li><Link to="#">Novidades</Link></li>
-              <li><Link to="#">Papelaria</Link></li>
+              <li><Link to="#">Fabricação</Link></li>
+              <li><Link to="#">Clubes</Link></li>
+              <li><Link to="#">Orçamento</Link></li>
             </ul>
           </section>
 
@@ -24,8 +24,7 @@ export default function Footer(){
               <li><Link to="#">Política de Frete Grátis</Link></li>
               <li><Link to="#">Perguntas frequentes</Link></li>
               <li><Link to="#">Sobre nós</Link></li>
-              <li><Link to="/contato">Contato</Link></li>
-              <li><Link to="#">Regulamento do Programa de Pontos UniClub</Link></li>
+              <li><Link to="#">Contato</Link></li>
               <li><Link to="#">Política de Pré-Venda</Link></li>
             </ul>
           </section>
@@ -33,8 +32,8 @@ export default function Footer(){
           <section className="footer-col">
             <h3 className="footer-title">Entre em contato</h3>
             <address className="footer-contact">
-              <a href="tel:+5561982555095">(061) 98255 5095</a>
-              <a href="mailto:bsb@unipaperbsb.com">bsb@unipaperbsb.com</a>
+              <a href="tel:+556132632401">Telefone : 61 32632401</a>
+              <a href="mailto:comercial@usportsbr.com">comercial@usportsbr.com</a>
               <p>Vicente Pires, Brasília - DF, 72005-080 (EPTG KM 7.2 em frente ao viaduto Israel Pinheiro)</p>
             </address>
             <div className="footer-social" aria-label="Redes sociais">
