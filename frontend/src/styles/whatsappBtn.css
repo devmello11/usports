@@ -1,9 +1,9 @@
 .btn-whatsapp {
     & {
-        position: absolute;
-        bottom: 12vh;
-        right: 2.5vw;
-        z-index: 999;
+        position: fixed;
+        bottom: 18px;
+        right: 16px;
+        z-index: 9999;
     }
     & img {
         width: 3.5rem;
@@ -19,26 +19,22 @@
 @media screen and (max-width: 1280px){
     .btn-whatsapp {
         & {
-            bottom: 15vh;
-            right: 5vw;
-            z-index: 999;
+            bottom: 18px;
+            right: 18px;
+            z-index: 9999;
         }
         & img{
-            width: 2.1rem;
+            width: 3rem;
         }
     }
 }
 
 @media screen and (max-width: 768px){
     .btn-whatsapp img{
-        width: 3rem;
+        width: 2.8rem;
     }
 }
 
 @media screen and (max-width: 480px){
-    .btn-whatsapp img{
-        position: relative;
-        width: 3rem;
-        bottom: -185vw;
-    }
+    .btn-whatsapp { & img{ width: 2.6rem; } }
 }

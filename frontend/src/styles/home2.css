@@ -30,6 +30,8 @@
   align-items: stretch;
   flex-wrap: nowrap; /* mantém na mesma linha */
   overflow-x: auto; /* permite rolar no mobile se necessário */
+  -webkit-overflow-scrolling: touch; /* momentum scroll no iOS */
+  scroll-snap-type: x proximity; /* melhora UX no arraste */
 }
 .five-image-card {
   width: clamp(180px, 16vw, 222.26px); /* reduz em telas menores, mantém limite superior */
@@ -38,6 +40,7 @@
   border-radius: 16px;
   overflow: hidden;
   background: #111;
+  scroll-snap-align: start;
 }
 .five-image-card img {
   width: 100%;
@@ -73,6 +76,8 @@
   gap: 50px; /* ainda mais compacto */
   flex-wrap: nowrap; /* mantém na mesma linha no desktop */
   overflow-x: auto; /* permite rolagem horizontal em telas pequenas */
+  -webkit-overflow-scrolling: touch; /* momentum scroll */
+  scroll-snap-type: x proximity; /* snap suave */
   z-index: 1; /* garante visibilidade acima de camadas inferiores */
   scroll-margin-top: 90px; /* compensa o header fixo ao navegar via âncora */
 }
@@ -89,6 +94,7 @@
   justify-content: center;     /* centraliza horizontalmente */
   align-items: center;         /* centraliza verticalmente */
   transition: transform 180ms ease, box-shadow 180ms ease;
+  scroll-snap-align: start;
 }
 .clubs-card img {
   width: 90px;
@@ -230,10 +236,14 @@
 @media (max-width: 720px) {
   .product-grid-container { grid-template-columns: repeat(2, 1fr); }
   .product-image-wrap { width: 150px; height: 150px; }
+  .product-title { font-size: 0.96rem; }
+  .product-desc { font-size: 0.82rem; }
 }
 @media (max-width: 420px) {
   .product-grid-container { grid-template-columns: 1fr; }
   .product-image-wrap { width: 200px; height: 200px; }
+  .product-title { font-size: 0.94rem; }
+  .product-desc { font-size: 0.8rem; }
 }
 
 .home2-container *,

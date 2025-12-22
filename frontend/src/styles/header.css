@@ -388,6 +388,8 @@ header::before { content: none; display: none; }
         flex-direction: column;
         gap: 14px;
         box-shadow: -10px 0 28px rgba(0,0,0,0.35);
+          overflow-y: auto; /* permite rolagem no menu em telas muito pequenas */
+          -webkit-overflow-scrolling: touch;
     }
 
     .mobile-menu-panel a {
